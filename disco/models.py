@@ -18,7 +18,7 @@ class Banda(models.Model):
         return self.nome
 
     def get_absolute_url(self):
-        return reverse("banda_list", kwargs={"pk": self.pk})
+        return reverse("discos:banda_detail", kwargs={"pk": self.pk})
 
 
 class Album(models.Model):
@@ -38,7 +38,7 @@ class Album(models.Model):
         return self.titulo
 
     def get_absolute_url(self):
-        return reverse("album_musicas", kwargs={"pk": self.pk})
+        return reverse("discos:album_detail", kwargs={"pk": self.pk})
 
 
 class Musica(models.Model):
@@ -57,7 +57,7 @@ class Musica(models.Model):
         return self.titulo
 
     def get_absolute_url(self):
-        return reverse("musica_detail", kwargs={"pk": self.pk})
+        return reverse("discos:musica_detail", kwargs={"pk": self.pk})
 
     def get_formated_music_time(self):
         return str(timedelta(seconds=self.segundos))

@@ -7,6 +7,47 @@
 
 
 {% block 'content' %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Album</th>
+            <th>Banda</th>
+            <th>Duração</th>
+            <th>Data</th>
 
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Album</th>
+            <th>Banda</th>
+            <th>Duração</th>
+            <th>Data</th>
+
+        </tr>
+    </tfoot>
+    <tbody>
+        {% if  musicas %}
+        {% for musica in musicas %}
+        <tr>
+            <th>{{ forloop.counter }}</th>
+            <td>{{ musica.titulo }}</td>
+            <td><a href="{{musica.album.get_absolute_url}}">{{ musica.album }}</a></td>
+            <td><a href="{{musica.album.banda.get_absolute_url}}">{{ musica.album.banda.nome }}</a>
+            </td>
+            <td>{{ musica.get_formated_music_time }}</td>
+            <td>{{ musica.album.data }}</td>
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+    </tbody>
+</table>
 
 {% endblock 'content' %}
