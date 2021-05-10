@@ -7,6 +7,16 @@
 
 
 {% block 'content' %}
-{{ album.titulo }}
+{{ album }}
+
+<!--Pegar o nome das musicas do album-->
+{% for musica in album.musica_set.all %}
+
+{{ musica }}
+
+{% endfor %}
+
+
+
 
 {% endblock 'content' %}

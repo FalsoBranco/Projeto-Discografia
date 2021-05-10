@@ -8,5 +8,10 @@
 
 {% block 'content' %}
 {{ banda.nome }}
+<!--Pegar o nome dos da banda-->
+{% for album in banda.album_set.all %}
+
+{{ album }}
+{% endfor %}
 
 {% endblock 'content' %}
