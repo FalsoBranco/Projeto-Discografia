@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+
+{% block 'content' %}
+
+<form method="POST" action="{% url "discos:musica_delete" musica.pk%}">
+    {% csrf_token %}<input type="submit" value="DELETE">
+</form>
+
+
+
+
+
+
+{% endblock 'content' %}

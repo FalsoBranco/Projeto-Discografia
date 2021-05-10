@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}Alterar Musica{% endblock 'title' %}
+{% block 'content' %}
+
+
+<form action="{% url 'discos:musica_update' musica.pk %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit">Salvar</button>
+</form>
+
+
+{% endblock 'content' %}

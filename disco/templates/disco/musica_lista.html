@@ -41,6 +41,12 @@
             </td>
             <td>{{ musica.get_formated_music_time }}</td>
             <td>{{ musica.album.data }}</td>
+            <td>
+                <a href="{% url 'discos:musica_update' musica.pk %}">editar</a>
+            </td>
+            <td>
+                <a href="{% url 'discos:musica_delete' musica.pk %}">Deletar</a>
+            </td>
 
 
         </tr>
